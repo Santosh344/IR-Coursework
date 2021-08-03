@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        form.example input[type="text"] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: right;
+            width: 80%;
+            background: white;
+        }
+        
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: greenyellow;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+        
+        form.example button:hover {
+            background: white;
+        }
+        
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            cursor: pointer;
+        }
+        
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        
+        .float-left li {
+            margin-top: 20px;
+            margin-bottom: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="float-md-left">
+        <form class="example" action="/" style="margin: auto; max-width: 200px">
+            <a href="/">
+                <img src="img/logo.jpg" alt="" width="400" style="margin-left: -100px;" />
+            </a>
+            <input id="query" type="text" placeholder="Input text here" name="q" />
+            <button id="search"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <hr />
+    <hr />
+    <div class="float-md-left">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div id="results" class="col-sm-6">
+                <ol>
+                    <li id="list-results">
+                        <!-- Appends here -->
+                    </li>
+                </ol>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <div class="pagination">
+        <a id='previous'>&laquo;</a>
+        <a id="current" href="#">1</a>
+        <a id="current" href="#">2</a>
+        <a id="next">&raquo;</a>
+    </div>
+</body>
+<script src="js/index.js"></script>
+
+</html>
